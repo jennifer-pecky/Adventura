@@ -7,12 +7,13 @@
 } */
 
 .home {
-    background: linear-gradient(to left, #262916, #000000cc), url(../images/Sumeer.png);
+    background: linear-gradient(to left, rgba(0, 0, 0, 0.5), hwb(0 0% 100% / 0.8)), url(../images/Sumeer.png);
     background-size: cover;
+    object-fit: contain;
 }
 
 .header a.active {
-    color: black;
+    color: #8B4513;
 
 }
 
@@ -21,7 +22,7 @@ nav {
     overflow-y: hidden;
 }
 
-@media screen and (max-width: 765px) {
+@media screen and (max-width: 600px) {
     .header a.active {
         background: inherit;
         border-top: 0;
