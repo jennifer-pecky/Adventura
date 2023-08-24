@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400&family=Roboto&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  /* background-color: white; */
+}
+
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-family: 'Merriweather', serif;
+  background-color: #E4D8B4;
+
+}
+
+/* 2E282A */
