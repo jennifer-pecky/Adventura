@@ -1,18 +1,18 @@
-.logo {
+/* .logo {
     font-size: 42px;
     background: -webkit-linear-gradient(#e250e6, #4b50e6, #e250e6, #4b50e6);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     margin-bottom: 0;
-}
+} */
 
 .home {
-    background: linear-gradient(to left, #e4d8b4, #000000cc), url(../images/Sumeer.png);
+    background: linear-gradient(to left, #262916, #000000cc), url(../images/Sumeer.png);
     background-size: cover;
 }
 
 .header a.active {
-    color: #8B4513;
+    color: black;
 
 }
 
