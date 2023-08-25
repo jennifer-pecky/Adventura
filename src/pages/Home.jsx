@@ -1,31 +1,40 @@
+import { NavLink } from 'react-router-dom';
 import '../styles/Head.css';
 
 export default function Home() {
   return (
     <section className="">
       <div className="h-[100vh] flex justify-center items-center home">
-        <div className="">
-          <div className="flex items-center h-[10vh] text-2xl text-white font-poppins">
-            Welcome to -
+        <div className="text-[#ffffff] text-center space-y-4">
+          <h1 className="flex items-center text-[15px] h-[10vh] md:text-2xl text-white font-poppins">
+            {' '}
+            <span className="hidden md:block"> Welcome to -</span>
             <span className="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#8B4513] via-[#3b2f0a] to-[#8B4513]">
               Adventura
             </span>{' '}
-            - Where Stories Unfold
-          </div>
-          <div className="flex items-center text-white">
-            <p className="italic">
-              Adventura takes storytelling to new heights with the integration{' '}
-              <br />
-              of AI narration. As you journey through your chosen stories, our{' '}
-              <br />
-              AI collaborates to weave a seamless narrative, adding depth and{' '}
-              <br />
-              immersion to your experience. Words come to life with a touch of{' '}
-              <br />
-              magic as the AI takes your choices and fashions them into a <br />
-              compelling tale that captivates your senses.
-            </p>
-          </div>
+            <span className="items-center"> - Where Stories Unfold</span>
+          </h1>
+          <p className="italic text-center text-white md:text-xl text-[13px] leading-tight">
+            Adventura takes storytelling to new heights with the integration{' '}
+            <br />
+            of AI narration. As you journey through your chosen stories, our{' '}
+            <br />
+            AI collaborates to weave a seamless narrative, adding depth and{' '}
+            <br />
+            immersion to your experience. Words come to life with a touch of{' '}
+            <br />
+            magic as the AI takes your choices and fashions them into a <br />
+            compelling tale that captivates your senses.
+          </p>
+          <button className="h-[10vh]">
+            <NavLink
+              to="/signup"
+              className="text-white bg-[#8B4513] py-2 px-4 md:py-3 md:px-7 gap-2
+            rounded-md border-2 border-gray-900 hover:bg-[#000000cc] hover:text-white mt-6"
+            >
+              Get Started
+            </NavLink>
+          </button>
         </div>
       </div>
       <p className="h-[100vh]">

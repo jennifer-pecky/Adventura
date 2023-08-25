@@ -18,7 +18,7 @@ export default function Header() {
     const winScroll = window.scrollY;
     const stickHeader =
       winScroll >= 150
-        ? 'fixed bg-white w-full transition duration-200'
+        ? 'fixed bg-white w-full transition duration-5000'
         : 'absolute bg-white w-full ';
     setSticky(stickHeader);
   };
