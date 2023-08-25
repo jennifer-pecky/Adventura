@@ -2,6 +2,11 @@ import { NavLink } from 'react-router-dom';
 import '../styles/Head.css';
 
 export default function Home() {
+  // const STEP__DATA = [
+  // "john","Ikenna",
+
+  // ];
+
   return (
     <section className="">
       <div className="h-[100vh] flex justify-center items-center home">
@@ -38,27 +43,117 @@ export default function Home() {
         </div>
       </div>
 
-      <div>
-        <div className="flex ">
-          <img src="smile.png" alt="" className="w-[25vw]" />
-          <div className="space-y-4 md:text-[16px] p-3 bg-gray-400">
-            <h1>Wonders of Thailand </h1>
-            <p>
-              These cases are perfectly simple and easy to distinguish in a free{' '}
-              <br />
-              stories, when our power of chioce is untrmmited and when nothing{' '}
-              <br />
-              prevents our being able to do what we like best, every pleasure is{' '}
-              <br />
-              to be welcomed and every pleasure is to be welcomed and every pain{' '}
-              <br />
-              avoided. But in certain circumtances and every pain avoided. But{' '}
-              <br />
-              is certain circumtances and owing to the claims of duty, ar the{' '}
-              <br />
-              obiigation of business
-            </p>
-            <NavLink to={'/stories'}>Read More</NavLink>
+      <div className="flex justify-center items-center mt-10">
+        <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
+          <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+            <a href="#">
+              <img src="story.png" alt="" />
+            </a>
+            <div className="p-5 bg-[#3b2f0a]">
+              <a href="#">
+                <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                  Noteworthy technology acquisitions 2021
+                </h5>
+              </a>
+              <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
+                Here are the biggest enterprise technology acquisitions of 2021
+                so far, in reverse chronological order.
+              </p>
+              <NavLink
+                to="/stories"
+                className="inline-flex items-center px-3 py-2 space-x-2 text-sm font-medium text-center text-white bg-[#8B4513] rounded-lg hover:bg-[#000000cc] focus:ring-4"
+              >
+                Read more
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={1.5}
+                  stroke="currentColor"
+                  className="w-4 h-4"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25"
+                  />
+                </svg>
+              </NavLink>
+            </div>
+          </div>
+
+          <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+            <a href="#">
+              <img src="story.png" alt="" />
+            </a>
+            <div className="p-5 bg-[#3b2f0a]">
+              <a href="#">
+                <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                  Noteworthy technology acquisitions 2021
+                </h5>
+              </a>
+              <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
+                Here are the biggest enterprise technology acquisitions of 2021
+                so far, in reverse chronological order.
+              </p>
+              <NavLink
+                to="/stories"
+                className="inline-flex items-center px-3 py-2 space-x-2 text-sm font-medium text-center text-white bg-[#8B4513] rounded-lg hover:bg-[#000000cc] focus:ring-4"
+              >
+                Read more
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={1.5}
+                  stroke="currentColor"
+                  className="w-4 h-4"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25"
+                  />
+                </svg>
+              </NavLink>
+            </div>
+          </div>
+
+          <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+            <a href="#">
+              <img src="story.png" alt="" />
+            </a>
+            <div className="p-5 bg-[#3b2f0a]">
+              <a href="#">
+                <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                  Noteworthy technology acquisitions 2021
+                </h5>
+              </a>
+              <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
+                Here are the biggest enterprise technology acquisitions of 2021
+                so far, in reverse chronological order.
+              </p>
+              <NavLink
+                to="/stories"
+                className="inline-flex items-center px-3 py-2 space-x-2 text-sm font-medium text-center text-white bg-[#8B4513] rounded-lg hover:bg-[#000000cc] focus:ring-4"
+              >
+                Read more
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={1.5}
+                  stroke="currentColor"
+                  className="w-4 h-4"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25"
+                  />
+                </svg>
+              </NavLink>
+            </div>
           </div>
         </div>
       </div>
