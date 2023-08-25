@@ -37,19 +37,31 @@ export default function Home() {
           </button>
         </div>
       </div>
-      <p className="h-[100vh]">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam aut
-        delectus porro tempora. Repellat fuga eos nesciunt placeat quia eum
-        commodi, autem nam, amet minima dolore exercitationem voluptatibus earum
-        quibusdam possimus totam porro sunt animi nulla, molestiae error
-        accusantium et consequatur vero? Placeat quas similique aut ipsam quae
-        consequatur voluptatem minima dolore porro, soluta in amet consectetur
-        explicabo velit esse numquam enim eveniet officia molestiae aspernatur
-        nemo. Distinctio fugit beatae cupiditate obcaecati assumenda aut veniam
-        consequatur necessitatibus. Voluptatibus atque tenetur quis minus, amet
-        voluptate distinctio eum quaerat nulla, suscipit architecto. Eos officia
-        placeat inventore excepturi? Reiciendis consequuntur quod totam sunt.
-      </p>
+
+      <div>
+        <div className="flex ">
+          <img src="smile.png" alt="" className="w-[25vw]" />
+          <div className="space-y-4 md:text-[16px] p-3 bg-gray-400">
+            <h1>Wonders of Thailand </h1>
+            <p>
+              These cases are perfectly simple and easy to distinguish in a free{' '}
+              <br />
+              stories, when our power of chioce is untrmmited and when nothing{' '}
+              <br />
+              prevents our being able to do what we like best, every pleasure is{' '}
+              <br />
+              to be welcomed and every pleasure is to be welcomed and every pain{' '}
+              <br />
+              avoided. But in certain circumtances and every pain avoided. But{' '}
+              <br />
+              is certain circumtances and owing to the claims of duty, ar the{' '}
+              <br />
+              obiigation of business
+            </p>
+            <NavLink to={'/stories'}>Read More</NavLink>
+          </div>
+        </div>
+      </div>
     </section>
   );
 }
