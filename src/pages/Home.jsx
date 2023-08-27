@@ -61,7 +61,7 @@ export default function Home() {
           </button>
         </div>
       </div>
-      <div className="mt-10 p-4 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+      <div className="mt-10 lg:p-7 p-4 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
         {CARD.map((item) => (
           <div
             className="bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"

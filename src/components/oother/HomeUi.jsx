@@ -1,5 +1,4 @@
-import Contact from './contact';
-
+import { BsLinkedin, BsTwitter, BsInstagram } from 'react-icons/bs';
 export default function HomeUi() {
   return (
     <>
@@ -9,7 +8,7 @@ export default function HomeUi() {
             <div className="text-center">
               <h1 className="text-4xl font-semibold">ABOUT US</h1>
 
-              <p className="text-xl text-[14px] text-right leading-tight">
+              <p className="text-xl text-[14px] md:text-right leading-tight">
                 Welcome to Adventura, your gateway to a world <br /> of
                 interactive storytelling and boundless imagination. <br /> We
                 are a passionate team of <br />
@@ -24,7 +23,7 @@ export default function HomeUi() {
             </div>
           </div>
         </section>
-        <div className="flex">
+        <div className="flex space-x-20">
           <div className="form-container">
             <div className="form">
               <span className="heading">Get in touch</span>
@@ -53,8 +52,41 @@ export default function HomeUi() {
               </div>
             </div>
           </div>
+
+          <div className="flex items-center">
+            <div className="">
+              <h1 className="text-[#0e0d09] font-bold text-2xl">
+                Connect with us
+              </h1>
+              <div className="flex space-x-4">
+                <a
+                  href="https://twitter.com/your_twitter_profile"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="transition-transform transform hover:scale-150"
+                >
+                  <BsLinkedin className="text-[#0E0D09] text-5xl" />
+                </a>
+                <a
+                  href="https://twitter.com/your_twitter_profile"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="transition-transform transform hover:scale-150"
+                >
+                  <BsTwitter className="text-[#0E0D09] text-5xl" />
+                </a>
+                <a
+                  href="https://twitter.com/your_twitter_profile"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="transition-transform transform hover:scale-150"
+                >
+                  <BsInstagram className="text-[#0E0D09] text-5xl" />
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
-        <Contact />
       </div>
     </>
   );
