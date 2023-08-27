@@ -61,15 +61,15 @@ export default function Home() {
           </button>
         </div>
       </div>
-      <div className="mt-10 flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-4">
+      <div className="mt-10 p-4 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
         {CARD.map((item) => (
           <div
-            className="flex-shrink-0 max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
+            className="bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
             key={item.id}
           >
-            <a href="#">
+            <NavLink to={'/stories'}>
               <img src="story.png" alt="" />
-            </a>
+            </NavLink>
             <div className="p-5 bg-[#3b2f0a]">
               <a href="#">
                 <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
