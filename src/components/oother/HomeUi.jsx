@@ -6,7 +6,9 @@ export default function HomeUi() {
         <section className="">
           <div className="mt-10 flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-10 abt-us">
             <div className="text-left w-[45%] my-txt">
-              <h1 className="text-4xl font-semibold">ABOUT US</h1>
+              <h1 className="text-4xl font-bold font-semibold text-[#8B4513]">
+                ABOUT US
+              </h1>
 
               <p className="text-xl text-[14px] md:text-left leading-[2] ">
                 Welcome to Adventura, your gateway to a world <br /> of
