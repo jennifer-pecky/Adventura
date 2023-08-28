@@ -100,7 +100,7 @@ export default function Header() {
               <NavLink to="/stories">Stories</NavLink>
               <NavLink
                 to="/login"
-                className="flex items-center gap-x-2 font-medium text-gray-500 hover:text-blue-600 sm:border-l sm:border-gray-300 sm:my-6 sm:pl-6 dark:border-gray-700 dark:text-gray-400 dark:hover:text-blue-500"
+                className="flex items-center gap-x-2 font-medium text-[#8B4513] hover:text-[#00003] sm:border-l sm:border-gray-300 sm:my-6 sm:pl-6"
               >
                 <svg
                   className="w-4 h-4"

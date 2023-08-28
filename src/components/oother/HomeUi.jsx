@@ -4,11 +4,11 @@ export default function HomeUi() {
     <>
       <div>
         <section className="">
-          <div className="mt-10 flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-10">
-            <div className="text-center">
+          <div className="mt-10 flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-10 abt-us">
+            <div className="text-left w-[45%] my-txt">
               <h1 className="text-4xl font-semibold">ABOUT US</h1>
 
-              <p className="text-xl text-[14px] md:text-right leading-tight">
+              <p className="text-xl text-[14px] md:text-left leading-[2] ">
                 Welcome to Adventura, your gateway to a world <br /> of
                 interactive storytelling and boundless imagination. <br /> We
                 are a passionate team of <br />
@@ -18,8 +18,8 @@ export default function HomeUi() {
               </p>
             </div>
 
-            <div>
-              <img src="plat.png" alt="" />
+            <div className="  w-[45%] my-img">
+              <img src="stories.png" alt="" />
             </div>
           </div>
         </section>

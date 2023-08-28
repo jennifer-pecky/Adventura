@@ -1,13 +1,5 @@
-/* .logo {
-    font-size: 42px;
-    background: -webkit-linear-gradient(#e250e6, #4b50e6, #e250e6, #4b50e6);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    margin-bottom: 0;
-} */
-
 .home {
-    background: linear-gradient(to left, rgba(0, 0, 0, 0.5), hwb(0 0% 100% / 0.8)), url(2.png);
+    background: linear-gradient(to left, rgba(0, 0, 0, 0.5), hwb(0 0% 100% / 0.8)), url(hero.png);
     background-size: cover;
     object-fit: contain;
 }
@@ -21,6 +13,23 @@ nav {
     transition: 1s;
     overflow-y: hidden;
 }
+
+/* for about us page */
+/* .abt-us {
+    border: 2px solid green;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background-color: green;
+}
+
+.abt-us .my-txt {
+    background-color: red;
+    width: 50%;
+}
+
+.abt-us  */
 
 @media screen and (max-width: 600px) {
     .header a.active {
@@ -130,4 +139,39 @@ nav {
 .form-container .form .button-container .reset-button-container .reset-button:hover {
     background: transparent;
     color: #001925;
+}
+
+/* Readmore styles  */
+
+button {
+    display: flex;
+    align-items: center;
+    font-family: inherit;
+    font-weight: 500;
+    font-size: 17px;
+    padding: 0.8em 1.3em 0.8em 0.9em;
+    color: white;
+    background: #ad5389;
+    background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+    border: none;
+    letter-spacing: 0.05em;
+    border-radius: 16px;
+}
+
+button svg {
+    margin-right: 3px;
+    transform: rotate(30deg);
+    transition: transform 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+button span {
+    transition: transform 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+button:hover svg {
+    transform: translateX(5px) rotate(90deg);
+}
+
+button:hover span {
+    transform: translateX(7px);
 }

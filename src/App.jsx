@@ -6,6 +6,7 @@ import Stories from './pages/Stories';
 import Nopage from './pages/Nopage';
 import Signup from './pages/Signup';
 import Login from './pages/Login';
+import Password from './pages/Password';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="*" element={<Nopage />} />
         <Route path="signup" element={<Signup />} />
         <Route path="login" element={<Login />} />
+        <Route path="password" element={<Password />} />
       </Routes>
     </>
   );
