@@ -24,33 +24,35 @@ export default function HomeUi() {
           </div>
         </section>
         <div className="flex flex-col md:flex-row justify-center items-center space-y-10 md:space-y-0 md:space-x-20 h-screen">
-          <div className="form-container md:max-w-md">
-            <div className="form">
-              <span className="heading">Get in touch</span>
-              <input placeholder="Name" type="text" className="input" />
-              <input
-                placeholder="Email"
-                id="mail"
-                type="email"
-                className="input"
-              />
-              <textarea
-                placeholder="Say Hello"
-                rows="10"
-                cols="30"
-                id="message"
-                name="message"
-                className="textarea"
-              ></textarea>
-              <div className="button-container">
-                <div className="send-button">Send</div>
-                <div className="reset-button-container">
-                  <div id="reset-btn" className="reset-button">
-                    Reset
-                  </div>
-                </div>
+          <div className="card">
+            <span className="title">Leave a Comment</span>
+            <form className="form">
+              <div className="group">
+                <input placeholder="‎" type="text" required="" />
+                <label htmlFor="name">Name</label>
               </div>
-            </div>
+              <div className="group">
+                <input
+                  placeholder="‎"
+                  type="email"
+                  id="email"
+                  name="email"
+                  required=""
+                />
+                <label htmlFor="email">Email</label>
+              </div>
+              <div className="group">
+                <textarea
+                  placeholder="‎"
+                  id="comment"
+                  name="comment"
+                  rows="5"
+                  required=""
+                ></textarea>
+                <label htmlFor="comment">Comment</label>
+              </div>
+              <button type="submit">Submit</button>
+            </form>
           </div>
           <div className="flex flex-col justify-center items-center md:items-start max-w-lg">
             <h1 className="text-[#0e0d09] font-bold text-2xl text-center md:text-left">
