@@ -23,8 +23,8 @@ export default function HomeUi() {
             </div>
           </div>
         </section>
-        <div className="flex space-x-20">
-          <div className="form-container">
+        <div className="flex flex-col md:flex-row justify-center items-center space-y-10 md:space-y-0 md:space-x-20 h-screen">
+          <div className="form-container md:max-w-md">
             <div className="form">
               <span className="heading">Get in touch</span>
               <input placeholder="Name" type="text" className="input" />
@@ -52,38 +52,35 @@ export default function HomeUi() {
               </div>
             </div>
           </div>
-
-          <div className="flex items-center">
-            <div className="">
-              <h1 className="text-[#0e0d09] font-bold text-2xl">
-                Connect with us
-              </h1>
-              <div className="flex space-x-4">
-                <a
-                  href="https://twitter.com/your_twitter_profile"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="transition-transform transform hover:scale-150"
-                >
-                  <BsLinkedin className="text-[#0E0D09] text-5xl" />
-                </a>
-                <a
-                  href="https://twitter.com/your_twitter_profile"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="transition-transform transform hover:scale-150"
-                >
-                  <BsTwitter className="text-[#0E0D09] text-5xl" />
-                </a>
-                <a
-                  href="https://twitter.com/your_twitter_profile"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="transition-transform transform hover:scale-150"
-                >
-                  <BsInstagram className="text-[#0E0D09] text-5xl" />
-                </a>
-              </div>
+          <div className="flex flex-col justify-center items-center md:items-start max-w-lg">
+            <h1 className="text-[#0e0d09] font-bold text-2xl text-center md:text-left">
+              Connect with us
+            </h1>
+            <div className="flex justify-center md:justify-start mt-4 space-x-4">
+              <a
+                href="https://www.linkedin.com/in/jennifer-chioma-maduagwu-7051ab236/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="transition-transform transform hover:scale-150"
+              >
+                <BsLinkedin className="text-[#0E0D09] text-5xl" />
+              </a>
+              <a
+                href="https://twitter.com/pecky_jennifer"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="transition-transform transform hover:scale-150"
+              >
+                <BsTwitter className="text-[#0E0D09] text-5xl" />
+              </a>
+              <a
+                href="https://www.instagram.com/jenniferpecky/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="transition-transform transform hover:scale-150"
+              >
+                <BsInstagram className="text-[#0E0D09] text-5xl" />
+              </a>
             </div>
           </div>
         </div>

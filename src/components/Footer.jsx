@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer>
+    <footer className="bg-[#8B4513]">
       <div className="max-w-[85rem] py-10 px-4 sm:px-6 lg:px-8 mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-3 items-center gap-5 text-center">
           <div>
@@ -9,33 +9,27 @@ export default function Footer() {
               href="#"
               aria-label="Brand"
             >
-              Brand
+              <span className="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#fff] via-[#3b2f0a] to-[#fff]">
+                Adventura
+              </span>{' '}
             </a>
           </div>
 
-          <ul className="text-center">
+          <ul className="text-center header">
             <li className="inline-block relative pr-8 last:pr-0 last-of-type:before:hidden before:absolute before:top-1/2 before:right-3 before:-translate-y-1/2 before:content-['/'] before:text-gray-300 dark:before:text-gray-600">
               <a
-                className="inline-flex gap-x-2 text-sm text-gray-500 hover:text-gray-800 dark:text-gray-500 dark:hover:text-gray-200"
-                href="#"
+                className="inline-flex gap-x-2 text-sm text-[#fff] hover:text-gray-800  dark:hover:text-gray-200"
+                href="/"
               >
-                About
+                Home
               </a>
             </li>
             <li className="inline-block relative pr-8 last:pr-0 last-of-type:before:hidden before:absolute before:top-1/2 before:right-3 before:-translate-y-1/2 before:content-['/'] before:text-gray-300 dark:before:text-gray-600">
               <a
-                className="inline-flex gap-x-2 text-sm text-gray-500 hover:text-gray-800 dark:text-gray-500 dark:hover:text-gray-200"
-                href="#"
+                className="inline-flex gap-x-2 text-sm text-[#fff] hover:text-gray-800  dark:hover:text-gray-200"
+                href="/stories"
               >
-                Services
-              </a>
-            </li>
-            <li className="inline-block relative pr-8 last:pr-0 last-of-type:before:hidden before:absolute before:top-1/2 before:right-3 before:-translate-y-1/2 before:content-['/'] before:text-gray-300 dark:before:text-gray-600">
-              <a
-                className="inline-flex gap-x-2 text-sm text-gray-500 hover:text-gray-800 dark:text-gray-500 dark:hover:text-gray-200"
-                href="#"
-              >
-                Blog
+                Stories
               </a>
             </li>
           </ul>
