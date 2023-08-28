@@ -60,26 +60,28 @@ export default function Home() {
             </NavLink>
           </button> */}
 
-          <button className="flex items-center gap-3 p-4  bg-[#8B4513] hover:bg-[#000000cc] rounded-md shadow-md transition-all ease-in-out duration-600 text-white font-semibold uppercase text-sm">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              className="w-5 h-5"
-              stroke="currentColor"
-              aria-hidden="true"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z"
-              ></path>
-            </svg>
-            Get Started
-          </button>
+          <NavLink to={'/signup'}>
+            <button className="flex items-center gap-3 p-4  bg-[#8B4513] hover:bg-[#000000cc] rounded-md shadow-md transition-all ease-in-out duration-600 text-white font-semibold uppercase text-sm">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                className="w-5 h-5"
+                stroke="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z"
+                ></path>
+              </svg>
+              Get Started
+            </button>
+          </NavLink>
         </div>
       </div>
-      <div className="mt-10 lg:p-7 p-4 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 ">
+      <div className="mt-10 lg:p-16 p-4 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 ">
         {CARD.map((item) => (
           <div className="bg-white border rounded-lg shadow-lg" key={item.id}>
             <NavLink to={'/stories'}>

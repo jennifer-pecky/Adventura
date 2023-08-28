@@ -1,3 +1,5 @@
+import { NavLink } from 'react-router-dom';
+
 export default function Login() {
   return (
     <div className="h-screen flex items-center justify-center bg-gray-100 home">
@@ -26,10 +28,15 @@ export default function Login() {
           />
           <button
             type="submit"
-            className="py-2 px-4 bg-blue-500 text-white rounded-md w-full hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="py-2 px-4 bg-[#8B4513] text-white rounded-md w-full hover:bg-[#000000]"
           >
             Log In
           </button>
+          <div className="mt-4 text-sm text-gray-600">
+            <NavLink to={'/password'} className="text-blue-500 hover:underline">
+              Forgotten Password?
+            </NavLink>
+          </div>
           <div className="text-center">
             <p className="text-sm">Or continue with</p>
             <div className="flex justify-center space-x-2 mt-2">
