@@ -29,9 +29,9 @@ nav {
     width: 50%;
 }
 
- border-red-500 border-[1px]
 
 .abt-us  */
+
 
 @media screen and (max-width: 600px) {
     .header a.active {
@@ -40,7 +40,13 @@ nav {
         border-bottom-left-radius: 0px;
         border-bottom-right-radius: 0px;
     }
+
+    .card {
+        width: 100%;
+    }
 }
+
+/* border-red-500 border-[1px] */
 
 /* .broke {
     margin-left: 10px;
@@ -50,8 +56,9 @@ nav {
 .card {
     background-color: #fff;
     border-radius: 10px;
-    padding: 20px;
-    width: 350px;
+    padding: 30px;
+
+    height: 50vh;
     display: flex;
     flex-direction: column;
 }
@@ -101,7 +108,7 @@ nav {
 
 .form .group input:focus,
 .form .group textarea:focus {
-    border-color: #3366cc;
+    border-color: #8B4513;
 }
 
 .form .group input:focus+label,
@@ -109,7 +116,7 @@ nav {
     top: -10px;
     left: 10px;
     background-color: #fff;
-    color: #3366cc;
+    color: #8B4513;
     font-weight: 600;
     font-size: 14px;
 }
@@ -120,7 +127,7 @@ nav {
 }
 
 .form button {
-    background-color: #3366cc;
+    background-color: #8B4513;
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -131,7 +138,7 @@ nav {
 }
 
 .form button:hover {
-    background-color: #27408b;
+    background-color: #000000cc;
 }
 
 /* Readmore styles  */
