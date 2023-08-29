@@ -40,10 +40,10 @@ export default function Login() {
           <div className="text-center">
             <p className="text-sm">Or continue with</p>
             <div className="flex justify-center space-x-2 mt-2">
-              <button className="py-2 px-4 bg-red-500 text-white rounded-md w-1/2 hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500">
+              <button className="py-2 px-4 bg-[#8B4513] text-white rounded-md w-1/2 hover:bg-[#000000]">
                 Google
               </button>
-              <button className="py-2 px-4 bg-gray-900 text-white rounded-md w-1/2 hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-900">
+              <button className="py-2 px-4 bg-black text-white rounded-md w-1/2 hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-900">
                 Apple
               </button>
             </div>
