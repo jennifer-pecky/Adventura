@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import '../styles/Head.css';
 export default function Password() {
   return (
@@ -28,9 +29,9 @@ export default function Password() {
           <div className="text-center">
             <p className="text-sm">
               Remember your password?{' '}
-              <a href="/login" className="text-blue-500 hover:underline">
+              <Link to="/login" className="text-blue-500 hover:underline">
                 Log In
-              </a>
+              </Link>
             </p>
           </div>
         </div>

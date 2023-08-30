@@ -1,4 +1,4 @@
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 export default function Login() {
   return (
@@ -33,9 +33,9 @@ export default function Login() {
             Log In
           </button>
           <div className="mt-4 text-sm text-gray-600">
-            <NavLink to={'/password'} className="text-blue-500 hover:underline">
+            <Link to={'/password'} className="text-blue-500 hover:underline">
               Forgotten Password?
-            </NavLink>
+            </Link>
           </div>
           <div className="text-center">
             <p className="text-sm">Or continue with</p>
@@ -51,9 +51,9 @@ export default function Login() {
           <div className="text-center">
             <p className="text-sm">
               Don`t have an account?{' '}
-              <a href="/signup" className="text-blue-500 hover:underline">
+              <Link to="/signup" className="text-blue-500 hover:underline">
                 Sign Up
-              </a>
+              </Link>
             </p>
           </div>
         </div>

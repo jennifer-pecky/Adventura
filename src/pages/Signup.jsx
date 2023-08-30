@@ -1,5 +1,5 @@
 // import { NavLink } from 'react-router-dom';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import '../styles/Head.css';
 
 export default function Signup() {
@@ -7,9 +7,9 @@ export default function Signup() {
     <>
       <div className="h-screen flex items-center justify-center bg-gray-100 home">
         <div className="bg-white p-8 rounded-lg shadow-md w-full md:w-96 xl:w-1/3">
-          <NavLink to={'/'}>
+          <Link to={'/'}>
             <h2 className="text-2xl font-bold mb-4">Sign Up</h2>
-          </NavLink>
+          </Link>
           <div className="mb-4">
             <label
               htmlFor="email"
@@ -44,9 +44,9 @@ export default function Signup() {
 
           <div className="mt-4 text-sm text-gray-600">
             Already have an account?{' '}
-            <a href="/login" className="text-blue-500 hover:underline">
+            <Link to="/login" className="text-blue-500 hover:underline">
               Log In
-            </a>
+            </Link>
           </div>
           <div className="mt-6">
             <button className="w-full py-2 bg-[#3E311E] text-white rounded-md hover:bg-[#000000] focus:outline-none focus:ring focus:ring-red-200">
