@@ -1,8 +1,8 @@
-import { Link, NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import '../styles/Head.css';
-import HomeUi from '../components/oother/HomeUi';
+import HomeUi from '../components/other/HomeUi';
 import { useState } from 'react';
-import StoryPage from '../components/oother/storyPage';
+import StoryPage from '../components/other/storyPage';
 import card from '../story';
 
 export default function Home() {
@@ -36,17 +36,8 @@ export default function Home() {
             magic as the AI takes your choices and fashions them into a <br />
             compelling tale that captivates your senses.
           </p>
-          {/* <button className="h-[10vh]">
-            <NavLink
-              to="/signup"
-              className="text-white bg-[#8B4513] py-2 px-4 md:py-3 md:px-7 gap-2
-            rounded-md border-2 border-gray-900 hover:bg-[#000000cc] hover:text-white mt-6"
-            >
-              Get Started
-            </NavLink>
-          </button> */}
 
-          <NavLink to={'/signup'}>
+          <Link to={'/signup'}>
             <button className="flex items-center gap-3 p-4  bg-[#8B4513] hover:bg-[#000000cc] rounded-md shadow-md transition-all ease-in-out duration-600 text-white font-semibold uppercase text-sm">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -64,51 +55,51 @@ export default function Home() {
               </svg>
               Get Started
             </button>
-          </NavLink>
+          </Link>
         </div>
       </div>
       <div className="mt-10 lg:p-16 p-4 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 ">
         {card.map((item) => (
           <div className="bg-white border rounded-lg shadow-lg" key={item.id}>
-            <Link to={'/stories'}>
+            <Link to={`/stories/${item.id}`}>
               <img src="story.png" alt="" />
-            </Link>
-            <div className="p-8 bg-[#FFF]">
-              <a href="#">
-                <h5 className="mb-2 text-2xl tracking-tight text-[#8B4513] font-bold">
-                  {item.title}
-                </h5>
-              </a>
-              <p className="mb-3 font-normal text-gray-800 dark:text-gray-400">
-                {item.description}
-              </p>
+              <div className="p-8 bg-[#FFF]">
+                <a href="#">
+                  <h5 className="mb-2 text-2xl tracking-tight text-[#8B4513] font-bold">
+                    {item.title}
+                  </h5>
+                </a>
+                <p className="mb-3 font-normal text-gray-800 dark:text-gray-400">
+                  {item.description}
+                </p>
 
-              <button
-                className="btn mt-5"
-                onClick={() => handleReadStory(item.id)}
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  width="24"
-                  height="24"
+                <button
+                  className="btn mt-5"
+                  onClick={() => handleReadStory(item.id)}
                 >
-                  <path fill="none" d="M0 0h24v24H0z"></path>
-                  <path
-                    fill="currentColor"
-                    d="M5 13c0-5.088 2.903-9.436 7-11.182C16.097 3.564 19 7.912 19 13c0 .823-.076 1.626-.22 2.403l1.94 1.832a.5.5 0 0 1 .095.603l-2.495 4.575a.5.5 0 0 1-.793.114l-2.234-2.234a1 1 0 0 0-.707-.293H9.414a1 1 0 0 0-.707.293l-2.234 2.234a.5.5 0 0 1-.793-.114l-2.495-4.575a.5.5 0 0 1 .095-.603l1.94-1.832C5.077 14.626 5 13.823 5 13zm1.476 6.696l.817-.817A3 3 0 0 1 9.414 18h5.172a3 3 0 0 1 2.121.879l.817.817.982-1.8-1.1-1.04a2 2 0 0 1-.593-1.82c.124-.664.187-1.345.187-2.036 0-3.87-1.995-7.3-5-8.96C8.995 5.7 7 9.13 7 13c0 .691.063 1.372.187 2.037a2 2 0 0 1-.593 1.82l-1.1 1.039.982 1.8zM12 13a2 2 0 1 1 0-4 2 2 0 0 1 0 4z"
-                  ></path>
-                </svg>
-                <span>Read more</span>
-              </button>
-            </div>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    width="24"
+                    height="24"
+                  >
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                    <path
+                      fill="currentColor"
+                      d="M5 13c0-5.088 2.903-9.436 7-11.182C16.097 3.564 19 7.912 19 13c0 .823-.076 1.626-.22 2.403l1.94 1.832a.5.5 0 0 1 .095.603l-2.495 4.575a.5.5 0 0 1-.793.114l-2.234-2.234a1 1 0 0 0-.707-.293H9.414a1 1 0 0 0-.707.293l-2.234 2.234a.5.5 0 0 1-.793-.114l-2.495-4.575a.5.5 0 0 1 .095-.603l1.94-1.832C5.077 14.626 5 13.823 5 13zm1.476 6.696l.817-.817A3 3 0 0 1 9.414 18h5.172a3 3 0 0 1 2.121.879l.817.817.982-1.8-1.1-1.04a2 2 0 0 1-.593-1.82c.124-.664.187-1.345.187-2.036 0-3.87-1.995-7.3-5-8.96C8.995 5.7 7 9.13 7 13c0 .691.063 1.372.187 2.037a2 2 0 0 1-.593 1.82l-1.1 1.039.982 1.8zM12 13a2 2 0 1 1 0-4 2 2 0 0 1 0 4z"
+                    ></path>
+                  </svg>
+                  <span>Read more</span>
+                </button>
+              </div>
+            </Link>
           </div>
         ))}
 
         {storySelectId !== null && (
           <StoryPage
-            title={card.find((story) => story.id === storySelectId).title} // Use 'story' instead of 'item'
-            content={card.find((story) => story.id === storySelectId).content} // Use 'story' instead of 'item'
+            title={card.find((story) => story.id === storySelectId).title}
+            content={card.find((story) => story.id === storySelectId).content}
           />
         )}
       </div>
