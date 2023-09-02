@@ -64,11 +64,11 @@ export default function Home() {
             <Link to={`/stories/${item.id}`}>
               <img src="story.png" alt="" />
               <div className="p-8 bg-[#FFF]">
-                <a href="#">
+                <Link to={`/stories/${item.id}`}>
                   <h5 className="mb-2 text-2xl tracking-tight text-[#8B4513] font-bold">
                     {item.title}
                   </h5>
-                </a>
+                </Link>
                 <p className="mb-3 font-normal text-gray-800 dark:text-gray-400">
                   {item.description}
                 </p>

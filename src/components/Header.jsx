@@ -17,7 +17,7 @@ export default function Header() {
   const stickyHeader = () => {
     const winScroll = window.scrollY;
     const stickHeader =
-      winScroll >= 150
+      winScroll >= 100
         ? 'fixed bg-white w-full transition duration-5000'
         : 'absolute bg-white w-full ';
     setSticky(stickHeader);

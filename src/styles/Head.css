@@ -181,3 +181,22 @@ nav {
 .btn:hover span {
     transform: translateX(7px);
 }
+
+/* storyPage.css */
+.story-page {
+    max-width: 800px;
+    height: 100vh;
+    margin: auto;
+    padding: 20px;
+    margin-top: 6%;
+}
+
+.story-title {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.story-content {
+    font-size: 16px;
+    line-height: 1.5;
+}
