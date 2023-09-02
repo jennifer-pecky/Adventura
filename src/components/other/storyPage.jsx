@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import card from '../../story';
 
 const StoryPage = () => {
@@ -19,11 +19,23 @@ const StoryPage = () => {
   }
 
   return (
-    <div className="story-page">
-      <h2 className="story-title text-center font-bold md:text-4xl">
-        {selectedStory.title}
-      </h2>
-      <p className="story-content">{selectedStory.content}</p>
+    <div>
+      <div className="story-page">
+        <h2 className="story-title text-center font-bold md:text-4xl">
+          {selectedStory.title}
+        </h2>
+        <br />
+        <p className="story-content md:text-[20px] md:text-center">
+          {selectedStory.content}
+        </p>
+      </div>
+
+      <Link
+        to={'/'}
+        className="py-1 px-5 bg-black text-white rounded-lg fixed bottom-0 right-7"
+      >
+        Back
+      </Link>
     </div>
   );
 };

@@ -1,5 +1,5 @@
 .home {
-    background: linear-gradient(to left, rgba(0, 0, 0, 0.5), hwb(0 0% 100% / 0.8)), url(hero.png);
+    background: linear-gradient(to left, rgba(0, 0, 0, 0.5), hwb(0 0% 100% / 0.8)), url(../images/hero.png);
     background-size: cover;
     object-fit: contain;
 }
@@ -185,7 +185,7 @@ nav {
 /* storyPage.css */
 .story-page {
     max-width: 800px;
-    height: 100vh;
+    height: 110vh;
     margin: auto;
     padding: 20px;
     margin-top: 6%;
