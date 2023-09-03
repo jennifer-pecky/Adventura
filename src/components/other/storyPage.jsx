@@ -25,7 +25,7 @@ const StoryPage = () => {
           {selectedStory.title}
         </h2>
         <br />
-        <p className="story-content md:text-[20px] md:text-center">
+        <p className="story-content md:text-[20px] md:text-center leading-2">
           {selectedStory.content}
         </p>
       </div>

@@ -6,7 +6,7 @@ export default function HomeUi() {
         <section className="">
           <div className="mt-10 flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0  abt-us">
             <div className="text-left w-[45%] my-txt">
-              <h1 className="text-4xl  font-semibold text-[#8B4513]">
+              <h1 className="md:text-4xl  font-semibold text-[#8B4513]">
                 ABOUT US
               </h1>
 

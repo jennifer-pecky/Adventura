@@ -6,7 +6,7 @@ export default function Header() {
 
   const openMenu = () => {
     setMenu((prevMenu) => !prevMenu);
-    console.log('click');
+    // console.log('click');
   };
 
   const [sticky, setSticky] = useState('');

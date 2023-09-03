@@ -19,7 +19,7 @@ export default function Home() {
           <h1 className="flex items-center text-[15px] h-[10vh] md:text-2xl text-white font-poppins ">
             {' '}
             <span className="hidden md:block"> Welcome to -</span>
-            <span className="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#8B4513] via-[#3b2f0a] to-[#8B4513]">
+            <span className="text-4xl font-bold bg-clip-text text-transparent bg-[#8B4513]">
               Adventura
             </span>{' '}
             <span className="items-center"> - Where Stories Unfold</span>
