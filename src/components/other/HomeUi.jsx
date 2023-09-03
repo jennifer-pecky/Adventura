@@ -10,22 +10,31 @@ export default function HomeUi() {
                 ABOUT US
               </h1>
 
-              <p className="md:text-[18px] text-[13px] text-left leading-[2] ">
+              {/* <p className="md:text-[18px] text-[13px] text-left leading-[2] ">
                 Welcome to Adventura, your gateway to a world <br /> of
                 interactive storytelling and boundless imagination. <br /> We
                 are a passionate team of <br />
                 creators, developers and storytellers who <br /> believes in the
                 power of <br />
                 narratives that comes to life through your choices. <br />
+              </p> */}
+
+              <p className="text-[13px] md:text-[18px] lg:text-[20px] xl:text-[24px] text-left leading-[2]">
+                Welcome to Adventura, your gateway to a world <br /> of
+                interactive storytelling and boundless imagination. <br /> We
+                are a passionate team of <br />
+                creators, developers and storytellers who <br /> believe in the
+                power of <br />
+                narratives that come to life through your choices. <br />
               </p>
             </div>
 
-            <div className="  w-[45%] my-img">
+            <div className="  md:w-[45%] my-img">
               <img src="stories.png" alt="" />
             </div>
           </div>
         </section>
-        <div className="flex flex-col md:flex-row justify-center items-center space-y-10 md:space-y-0 md:space-x-20 h-screen">
+        <div className="flex flex-col md:flex-row justify-center items-center space-y-28 md:space-y-0 md:space-x-20 h-screen">
           <div className="card md:w-[55%]">
             <span className="title">Leave a Comment</span>
             <form className="form">
