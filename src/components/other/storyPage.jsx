@@ -21,7 +21,7 @@ const StoryPage = () => {
   return (
     <div>
       <div className="story-page">
-        <h2 className="story-title text-center font-bold md:text-4xl">
+        <h2 className="story-title text-center font-bold md:text-4xl text-[#8B4513]">
           {selectedStory.title}
         </h2>
         <br />
@@ -32,7 +32,7 @@ const StoryPage = () => {
 
       <Link
         to={'/'}
-        className="py-1 px-5 bg-black text-white rounded-lg fixed bottom-0 right-7"
+        className="py-1 px-5 bg-[#8B4513] text-white rounded-lg fixed bottom-0 right-7"
       >
         Back
       </Link>
