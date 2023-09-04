@@ -29,7 +29,7 @@ export default function Header() {
         className={` flex flex-wrap sm:justify-start sm:flex-nowrap z-50 w-full bg-[#F5F5F5]  text-sm py-3 sm:py-0 ${sticky}`}
       >
         <nav
-          className="relative  w-full mx-auto px-4 sm:flex sm:items-center sm:justify-between sm:px-6 lg:px-8"
+          className="relative  w-full mx-auto px-4 sm:flex sm:items-center sm:justify-between sm:px-6 md:px-20"
           aria-label="Global"
         >
           <div className="flex items-center justify-between">
@@ -75,7 +75,7 @@ export default function Header() {
           >
             <div className="flex flex-col gap-y-4 gap-x-0 mt-5 sm:flex-row sm:items-center sm:justify-end sm:gap-y-0 sm:gap-x-7 sm:mt-0 sm:pl-7">
               <NavLink to="/">Home</NavLink>
-              <NavLink to="/stories">Stories</NavLink>
+              <NavLink to="/stories">Write</NavLink>
               <Link
                 to="/login"
                 className="flex items-center gap-x-2 font-medium text-[#8B4513] hover:text-[#00003] sm:border-l sm:border-gray-300 sm:my-6 sm:pl-6"

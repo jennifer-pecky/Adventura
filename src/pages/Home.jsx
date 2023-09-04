@@ -4,6 +4,7 @@ import HomeUi from '../components/other/HomeUi';
 import { useState } from 'react';
 import StoryPage from '../components/other/storyPage';
 import card from '../story';
+// import TextToSpeech from '../components/other/TextToSpeech';
 
 export default function Home() {
   const [storySelectId, setStorySelectId] = useState(null);
@@ -72,6 +73,8 @@ export default function Home() {
                 <p className="mb-3 font-normal text-gray-800 dark:text-gray-400">
                   {item.description}
                 </p>
+
+                {/* <TextToSpeech storyText={item.content} /> */}
 
                 <button
                   className="btn mt-5"

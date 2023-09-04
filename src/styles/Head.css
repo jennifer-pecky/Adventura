@@ -20,23 +20,7 @@ nav {
     overflow-y: hidden;
 }
 
-/* for about us page */
-/* .abt-us {
-    border: 2px solid green;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    background-color: green;
-}
 
-.abt-us .my-txt {
-    background-color: red;
-    width: 50%;
-}
-
-
-.abt-us  */
 
 
 @media screen and (max-width: 600px) {
