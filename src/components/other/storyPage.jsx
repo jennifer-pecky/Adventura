@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import card from '../../story';
+// import TextToSpeech from './TextToSpeech'; // Import the TextToSpeech component
 
 const StoryPage = () => {
   const { id } = useParams();
@@ -8,6 +9,7 @@ const StoryPage = () => {
 
   useEffect(() => {
     const story = card.find((story) => story.id === id);
+    console.log('the use effect just ran');
 
     if (story) {
       setSelectedStory(story);
@@ -29,6 +31,7 @@ const StoryPage = () => {
           {selectedStory.content}
         </p>
       </div>
+      {/* {selectedStory && <TextToSpeech storyText={selectedStory.content} />} */}
 
       <Link
         to={'/'}
