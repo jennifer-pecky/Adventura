@@ -8,13 +8,14 @@ import Signup from './pages/Signup';
 import Login from './pages/Login';
 import Password from './pages/Password';
 import StoryPage from './components/other/storyPage';
+// import Layout from './components/Layout/Layout';
 
 function App() {
   return (
     <>
       <Routes>
         <Route path="/" element={<Core />}>
-          <Route path="/" element={<Home />} />
+          <Route index element={<Home />} />
         </Route>
         <Route path="stories" element={<Stories />} />
         <Route path="stories/:id" element={<StoryPage />} />

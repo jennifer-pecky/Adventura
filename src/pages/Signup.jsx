@@ -1,10 +1,10 @@
 // import { NavLink } from 'react-router-dom';
-import { Link, useHistory } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import '../styles/Head.css';
 import { useState } from 'react';
 
 export default function Signup() {
-  const history = useHistory();
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     firstname: '',
     lastname: '',
@@ -26,7 +26,7 @@ export default function Signup() {
 
     try {
       const response = await fetch(
-        'https://api-for-adventura-app.onrender.com/api/v1/auth/signUp',
+        'https://api-for-adventura-app.onrender.com/api/v1/auth/signup',
         {
           method: 'POST',
           headers: {
@@ -36,18 +36,28 @@ export default function Signup() {
         }
       );
 
+      console.log('Response:', response);
+
       if (response.ok) {
-        // Redirect or show a success message
+        setSuccessMessage('Sign-up was successful');
+        navigate.push('/stories');
       } else {
-        // Handle errors, e.g., display an error message
+        if (response.status === 422) {
+          const errorText = await response.text();
+          setErrorMessage(errorText);
+        } else {
+          setErrorMessage('An error occurred during sign-up');
+          // setErrorMessage(errorText.message);
+        }
       }
     } catch (error) {
       console.error('Error:', error);
+      setErrorMessage(error.message);
     }
   };
   return (
     <>
-      <div className="h-screen flex items-center justify-center bg-gray-100 home">
+      <div className=" flex items-center justify-center bg-gray-100 home">
         <div className="bg-white p-8 rounded-lg shadow-md w-full md:w-96 xl:w-1/3">
           <Link to={'/'}>
             <h2 className="text-2xl font-bold mb-4">Sign Up</h2>
@@ -64,7 +74,7 @@ export default function Signup() {
               <input
                 onChange={handleChange}
                 value={formData.firstname}
-                type="firstname"
+                type="text"
                 name="firstname"
                 id="firstname"
                 className="mt-1 p-2 w-full border border-gray-300 rounded-md focus:ring focus:ring-blue-200"
@@ -82,7 +92,7 @@ export default function Signup() {
               <input
                 onChange={handleChange}
                 value={formData.lastname}
-                type="lastname"
+                type="text"
                 name="lastname"
                 id="lastname"
                 className="mt-1 p-2 w-full border border-gray-300 rounded-md focus:ring focus:ring-blue-200"
@@ -100,7 +110,7 @@ export default function Signup() {
               <input
                 onChange={handleChange}
                 value={formData.username}
-                type="username"
+                type="text"
                 name="username"
                 id="username"
                 className="mt-1 p-2 w-full border border-gray-300 rounded-md focus:ring focus:ring-blue-200"
@@ -118,13 +128,14 @@ export default function Signup() {
               <input
                 onChange={handleChange}
                 value={formData.email}
-                type="email"
+                type="text"
                 name="email"
                 id="email"
                 className="mt-1 p-2 w-full border border-gray-300 rounded-md focus:ring focus:ring-blue-200"
                 placeholder="name@example.com"
               />
             </div>
+
             <div className="mb-4">
               <label
                 htmlFor="password"
@@ -142,7 +153,10 @@ export default function Signup() {
                 placeholder="********"
               />
             </div>
-            <button className="w-full bg-[#8B4513] text-white py-2 rounded-md hover:bg-[#000000]">
+            <button
+              name="submit"
+              className="w-full bg-[#8B4513] text-white py-2 rounded-md hover:bg-[#000000]"
+            >
               Sign Up
             </button>
 
@@ -161,6 +175,15 @@ export default function Signup() {
               </button>
             </div>
           </form>
+
+          {successMessage && (
+            <div className="success-message text-green-500">
+              {successMessage}
+            </div>
+          )}
+          {errorMessage && (
+            <div className="error-message text-red-600">{errorMessage}</div>
+          )}
         </div>
       </div>
     </>
