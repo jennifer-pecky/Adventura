@@ -1,9 +1,10 @@
 // import { NavLink } from 'react-router-dom';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import '../styles/Head.css';
 import { useState } from 'react';
 
 export default function Signup() {
+  const history = useHistory();
   const [formData, setFormData] = useState({
     firstname: '',
     lastname: '',
@@ -12,13 +13,37 @@ export default function Signup() {
     password: '',
   });
 
+  const [successMessage, setSuccessMessage] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefualt();
+    e.preventDefault();
+
+    try {
+      const response = await fetch(
+        'https://api-for-adventura-app.onrender.com/api/v1/auth/signUp',
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(formData),
+        }
+      );
+
+      if (response.ok) {
+        // Redirect or show a success message
+      } else {
+        // Handle errors, e.g., display an error message
+      }
+    } catch (error) {
+      console.error('Error:', error);
+    }
   };
   return (
     <>
