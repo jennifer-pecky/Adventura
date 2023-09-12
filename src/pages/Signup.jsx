@@ -61,7 +61,7 @@ export default function Signup() {
   };
   return (
     <>
-      <div className=" flex items-center justify-center bg-gray-100 home">
+      <div className="h-[100vh] flex items-center justify-center bg-gray-100 home">
         <div className="bg-white p-8 rounded-lg shadow-md w-full md:w-96 xl:w-1/3">
           <Link to={'/'}>
             <h2 className="text-2xl font-bold mb-4">Sign Up</h2>

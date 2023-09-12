@@ -19,7 +19,7 @@ export default function Home() {
   return (
     <section className="">
       <div className="h-[100vh] flex justify-center items-center home">
-        <div className="text-[#ffffff] text-center space-y-4 w-full max-w-7xl mx-auto">
+        <div className="text-[#ffffff] text-center space-y-4 w-[90%]">
           <h1 className="flex items-center text-[15px] h-[10vh] md:text-2xl text-white font-poppins ">
             {' '}
             <span className="hidden md:block"> Welcome to -</span>
@@ -62,7 +62,7 @@ export default function Home() {
           </Link>
         </div>
       </div>
-      <div className="mt-10 lg:p-16 w-full max-w-7xl mx-auto p-4 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 ">
+      <div className="mt-10 lg:p-16 w-full p-4 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 ">
         {card.map((item) => (
           <div className="bg-white border rounded-lg shadow-lg" key={item.id}>
             <Link to={`/stories/${item.id}`}>
