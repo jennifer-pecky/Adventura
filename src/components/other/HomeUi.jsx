@@ -4,20 +4,11 @@ export default function HomeUi() {
     <>
       <div>
         <section className="">
-          <div className="mt-10 flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0  abt-us">
+          <div className="mt-10 w-full max-w-7xl mx-auto flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0  abt-us">
             <div className="text-left w-[45%] my-txt">
               <h1 className="md:text-4xl  font-semibold text-[#8B4513]">
                 ABOUT US
               </h1>
-
-              {/* <p className="md:text-[18px] text-[13px] text-left leading-[2] ">
-                Welcome to Adventura, your gateway to a world <br /> of
-                interactive storytelling and boundless imagination. <br /> We
-                are a passionate team of <br />
-                creators, developers and storytellers who <br /> believes in the
-                power of <br />
-                narratives that comes to life through your choices. <br />
-              </p> */}
 
               <p className="text-[13px] md:text-[18px] lg:text-[20px] xl:text-[24px] text-left leading-[2]">
                 Welcome to Adventura, your gateway to a world <br /> of

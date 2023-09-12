@@ -2,6 +2,7 @@
 import { Link, useNavigate } from 'react-router-dom';
 import '../styles/Head.css';
 import { useState } from 'react';
+// import { AppContext } from '../App';
 
 export default function Signup() {
   const navigate = useNavigate();
@@ -15,6 +16,8 @@ export default function Signup() {
 
   const [successMessage, setSuccessMessage] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
+
+  // const {isLoggedIn, setIsLoggedIn} = useContext(AppContext)
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -40,7 +43,8 @@ export default function Signup() {
 
       if (response.ok) {
         setSuccessMessage('Sign-up was successful');
-        navigate.push('/stories');
+        // setIsLoggedIn(true);
+        navigate('/stories');
       } else {
         if (response.status === 422) {
           const errorText = await response.text();

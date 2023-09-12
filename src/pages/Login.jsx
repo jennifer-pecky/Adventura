@@ -1,6 +1,15 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { AppContext } from '../App';
+import { useContext } from 'react';
 
 export default function Login() {
+  const { setIsLoggedIn } = useContext(AppContext);
+  const navigate = useNavigate();
+
+  const handleLogin = () => {
+    setIsLoggedIn(true);
+    navigate('/');
+  };
   return (
     <div className="h-screen flex items-center justify-center bg-gray-100 home">
       <div className="bg-white p-8 rounded-lg shadow-md w-full md:w-96 xl:w-1/3">
@@ -28,6 +37,7 @@ export default function Login() {
           />
           <button
             type="submit"
+            onClick={handleLogin}
             className="py-2 px-4 bg-[#8B4513] text-white rounded-md w-full hover:bg-[#000000]"
           >
             Log In

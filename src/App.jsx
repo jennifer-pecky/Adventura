@@ -8,11 +8,20 @@ import Signup from './pages/Signup';
 import Login from './pages/Login';
 import Password from './pages/Password';
 import StoryPage from './components/other/storyPage';
+import { createContext, useState } from 'react';
 // import Layout from './components/Layout/Layout';
 
+export const AppContext = createContext();
+
 function App() {
+  // Global states
+  const [storySelectId, setStorySelectId] = useState(null);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
   return (
-    <>
+    <AppContext.Provider
+      value={{ storySelectId, setStorySelectId, isLoggedIn, setIsLoggedIn }}
+    >
       <Routes>
         <Route path="/" element={<Core />}>
           <Route index element={<Home />} />
@@ -24,7 +33,7 @@ function App() {
         <Route path="password" element={<Password />} />
         <Route path="*" element={<Nopage />} />
       </Routes>
-    </>
+    </AppContext.Provider>
   );
 }
 
