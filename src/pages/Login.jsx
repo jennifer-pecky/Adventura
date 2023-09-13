@@ -1,24 +1,33 @@
 import { Link, useNavigate } from 'react-router-dom';
 import { AppContext } from '../App';
 import { useContext, useState } from 'react';
+import { getToken } from '../auth';
 
 export default function Login() {
   const { setIsLoggedIn } = useContext(AppContext);
   const navigate = useNavigate();
+
   const [input, setInput] = useState({
     email: '',
     password: '',
   });
 
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setInput({ ...input, [name]: value });
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
+      const token = getToken();
+
       const response = await fetch(
         'https://api-for-adventura-app.onrender.com/api/v1/auth/signIn',
         {
-          method: 'POST',
+          method: 'GET',
           headers: {
-            'Content Type': 'application/json',
+            Authorization: '`Bearer ${token}',
           },
           body: JSON.stringify(input),
         }
@@ -48,6 +57,7 @@ export default function Login() {
               type="email"
               id="email"
               name="email"
+              onChange={handleChange}
               className="py-2 px-4 block w-full border rounded-md text-sm focus:border-blue-500 focus:ring-blue-500"
               required
             />
@@ -58,6 +68,7 @@ export default function Login() {
               type="password"
               id="password"
               name="password"
+              onChange={handleChange}
               className="py-2 px-4 block w-full border rounded-md text-sm focus:border-blue-500 focus:ring-blue-500"
               required
             />

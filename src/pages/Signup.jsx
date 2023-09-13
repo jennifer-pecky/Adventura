@@ -43,6 +43,7 @@ export default function Signup() {
 
       if (response.ok) {
         setSuccessMessage('Sign-up was successful');
+        localStorage.setItem('token', '');
         // setIsLoggedIn(true);
         navigate('/stories');
       } else {
