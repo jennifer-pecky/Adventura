@@ -2,6 +2,14 @@ import { Link, useNavigate } from 'react-router-dom';
 import { AppContext } from '../App';
 import { useContext, useState } from 'react';
 import { getToken } from '../auth';
+import Swal from 'sweetalert2';
+
+Swal.fire({
+  title: 'success!',
+  text: 'Do you want to continue',
+  icon: 'error',
+  confirmButtonText: 'Cool',
+});
 
 export default function Login() {
   const { setIsLoggedIn } = useContext(AppContext);
@@ -11,6 +19,8 @@ export default function Login() {
     email: '',
     password: '',
   });
+
+  // const []
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -27,12 +37,10 @@ export default function Login() {
         {
           method: 'GET',
           headers: {
-            Authorization: '`Bearer ${token}',
+            Authorization: `Bearer ${token}`,
           },
-          body: JSON.stringify(input),
         }
       );
-
       console.log('Response:', response);
     } catch (error) {
       console.error('Error:', error);
