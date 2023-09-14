@@ -80,7 +80,7 @@ export default function Header() {
               <NavLink to="/">Home</NavLink>
               <NavLink to="/stories">Write</NavLink>
               {isLoggedIn ? (
-                <div>Logout</div>
+                <button>Logout</button>
               ) : (
                 <Link
                   to="/login"

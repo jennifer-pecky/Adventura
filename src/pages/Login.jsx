@@ -2,14 +2,17 @@ import { Link, useNavigate } from 'react-router-dom';
 import { AppContext } from '../App';
 import { useContext, useState } from 'react';
 import { getToken } from '../auth';
-import Swal from 'sweetalert2';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
-Swal.fire({
-  title: 'success!',
-  text: 'Do you want to continue',
-  icon: 'error',
-  confirmButtonText: 'Cool',
-});
+// import Swal from 'sweetalert2';
+
+// Swal.fire({
+//   title: 'success!',
+//   text: 'Do you want to continue',
+//   icon: 'error',
+//   confirmButtonText: 'Cool',
+// });
 
 export default function Login() {
   const { setIsLoggedIn } = useContext(AppContext);
@@ -41,16 +44,52 @@ export default function Login() {
           },
         }
       );
+
       console.log('Response:', response);
+      if (response.ok) {
+        toast.success('🦄 Login Successful!', {
+          position: 'top-right',
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: 'dark',
+        });
+        setIsLoggedIn(true);
+        navigate('/');
+      } else {
+        toast.warn('🦄 Authentication failed. Please check your credentials', {
+          position: 'top-right',
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: 'dark',
+        });
+      }
     } catch (error) {
       console.error('Error:', error);
+      toast.warn('🦄 An error occured during authentication', {
+        position: 'top-right',
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: 'dark',
+      });
     }
   };
 
-  const handleLogin = () => {
-    setIsLoggedIn(true);
-    navigate('/');
-  };
+  // const handleLogin = () => {
+
+  //   navigate('/');
+  // };
 
   return (
     <div className="h-screen flex items-center justify-center bg-gray-100 home">
@@ -82,7 +121,6 @@ export default function Login() {
             />
             <button
               type="submit"
-              onClick={handleLogin}
               className="py-2 px-4 bg-[#8B4513] text-white rounded-md w-full hover:bg-[#000000]"
             >
               Log In
@@ -113,6 +151,8 @@ export default function Login() {
             </div>
           </div>
         </form>
+
+        <ToastContainer />
       </div>
     </div>
   );
