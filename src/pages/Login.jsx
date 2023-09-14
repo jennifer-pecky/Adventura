@@ -46,6 +46,8 @@ export default function Login() {
       );
 
       console.log('Response:', response);
+
+      
       if (response.ok) {
         toast.success('🦄 Login Successful!', {
           position: 'top-right',

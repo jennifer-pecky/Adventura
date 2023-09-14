@@ -9,6 +9,7 @@ import Login from './pages/Login';
 import Password from './pages/Password';
 import StoryPage from './components/other/storyPage';
 import { createContext, useState } from 'react';
+import VerifyToken from './components/VerifyToken';
 // import Layout from './components/Layout/Layout';
 
 export const AppContext = createContext();
@@ -28,6 +29,7 @@ function App() {
         </Route>
         <Route path="stories" element={<Stories />} />
         <Route path="stories/:id" element={<StoryPage />} />
+        <Routes path="/verify/:id/token" component={<VerifyToken />} />
         <Route path="signup" element={<Signup />} />
         <Route path="login" element={<Login />} />
         <Route path="password" element={<Password />} />
