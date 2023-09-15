@@ -1,9 +1,9 @@
 import { Link, useNavigate } from 'react-router-dom';
 import { AppContext } from '../App';
 import { useContext, useState } from 'react';
-import { getToken } from '../auth';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { postLogin } from '../lib/utilis';
 
 // import Swal from 'sweetalert2';
 
@@ -32,66 +32,8 @@ export default function Login() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    try {
-      const token = getToken();
-
-      const response = await fetch(
-        'https://api-for-adventura-app.onrender.com/api/v1/auth/signIn',
-        {
-          method: 'GET',
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        }
-      );
-
-      console.log('Response:', response);
-
-      
-      if (response.ok) {
-        toast.success('🦄 Login Successful!', {
-          position: 'top-right',
-          autoClose: 5000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: 'dark',
-        });
-        setIsLoggedIn(true);
-        navigate('/');
-      } else {
-        toast.warn('🦄 Authentication failed. Please check your credentials', {
-          position: 'top-right',
-          autoClose: 5000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: 'dark',
-        });
-      }
-    } catch (error) {
-      console.error('Error:', error);
-      toast.warn('🦄 An error occured during authentication', {
-        position: 'top-right',
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: 'dark',
-      });
-    }
+    postLogin(toast, navigate, setIsLoggedIn, input);
   };
-
-  // const handleLogin = () => {
-
-  //   navigate('/');
-  // };
 
   return (
     <div className="h-screen flex items-center justify-center bg-gray-100 home">
