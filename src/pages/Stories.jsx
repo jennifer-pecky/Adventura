@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 export default function Stories() {
   const [story, setStories] = useState({
@@ -62,7 +63,17 @@ export default function Stories() {
             className="w-full border border-gray-300 rounded px-3 py-2"
           />
         </div>
-        <div className="mb-4">
+        <div className="mb-4 flex justify-between">
+          <Link to={'/'}>
+            {' '}
+            <button
+              type="submit"
+              className="bg-[#8B4513] text-white px-4 py-2 rounded"
+            >
+              Back to home
+            </button>
+          </Link>
+
           <button
             type="submit"
             className="bg-[#8B4513] text-white px-4 py-2 rounded"
