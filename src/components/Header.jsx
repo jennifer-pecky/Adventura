@@ -1,8 +1,9 @@
 import { useState, useEffect, useContext } from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
 import '../styles/Head.css';
 import { AppContext } from '../App';
 export default function Header() {
+  const Navigate = useNavigate();
   const [menu, setMenu] = useState(true);
 
   const openMenu = () => {
@@ -25,6 +26,14 @@ export default function Header() {
   };
 
   const { isLoggedIn } = useContext(AppContext);
+
+  const handleWritePage = () => {
+    if (isLoggedIn) {
+      Navigate('/stories');
+    } else {
+      Navigate('/login');
+    }
+  };
 
   return (
     <>
@@ -78,7 +87,7 @@ export default function Header() {
           >
             <div className="flex flex-col gap-y-4 gap-x-0 mt-5 sm:flex-row sm:items-center sm:justify-end sm:gap-y-0 sm:gap-x-7 sm:mt-0 sm:pl-7">
               <NavLink to="/">Home</NavLink>
-              <NavLink to="/stories">Write</NavLink>
+              <button onClick={handleWritePage}>Write</button>
               {isLoggedIn ? (
                 <button>Logout</button>
               ) : (
