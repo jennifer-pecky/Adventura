@@ -38,7 +38,7 @@ export const postSignup = async (formData, setSuccessMessage, navigate, setError
     }
 }
 
-export const postLogin = async (toast, navigate, setIsLoggedIn, input) => {
+export const postLogin = async (toast, navigate, setIsLoggedIn, input, setInput) => {
     try {
         const token = localStorage.getItem('token');
 
@@ -69,6 +69,10 @@ export const postLogin = async (toast, navigate, setIsLoggedIn, input) => {
             });
             setIsLoggedIn(true);
             setTimeout(() => {
+                setInput({
+                    email: '',
+                    password: '',
+                });
                 navigate('/stories');
             }, 6000);
         } else {

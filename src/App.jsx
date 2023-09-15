@@ -19,9 +19,19 @@ function App() {
   const [storySelectId, setStorySelectId] = useState(null);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
+  const logout = () => {
+    localStorage.removeItem('token');
+    setIsLoggedIn(false);
+  };
   return (
     <AppContext.Provider
-      value={{ storySelectId, setStorySelectId, isLoggedIn, setIsLoggedIn }}
+      value={{
+        storySelectId,
+        setStorySelectId,
+        isLoggedIn,
+        setIsLoggedIn,
+        logout,
+      }}
     >
       <Routes>
         <Route path="/" element={<Core />}>

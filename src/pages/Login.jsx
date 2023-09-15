@@ -23,8 +23,6 @@ export default function Login() {
     password: '',
   });
 
-  // const []
-
   const handleChange = (e) => {
     const { name, value } = e.target;
     setInput({ ...input, [name]: value });
@@ -32,7 +30,7 @@ export default function Login() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    postLogin(toast, navigate, setIsLoggedIn, input);
+    postLogin(toast, navigate, setIsLoggedIn, input, setInput);
   };
 
   return (

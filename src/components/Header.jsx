@@ -5,6 +5,7 @@ import { AppContext } from '../App';
 export default function Header() {
   const Navigate = useNavigate();
   const [menu, setMenu] = useState(true);
+  // const [logout, setLogout] = useState(true)
 
   const openMenu = () => {
     setMenu((prevMenu) => !prevMenu);
@@ -25,7 +26,7 @@ export default function Header() {
     setSticky(stickHeader);
   };
 
-  const { isLoggedIn } = useContext(AppContext);
+  const { isLoggedIn, logout } = useContext(AppContext);
 
   const handleWritePage = () => {
     if (isLoggedIn) {
@@ -33,6 +34,11 @@ export default function Header() {
     } else {
       Navigate('/login');
     }
+  };
+
+  const handleLogout = () => {
+    logout();
+    Navigate('/');
   };
 
   return (
@@ -89,7 +95,7 @@ export default function Header() {
               <NavLink to="/">Home</NavLink>
               <button onClick={handleWritePage}>Write</button>
               {isLoggedIn ? (
-                <button>Logout</button>
+                <button onClick={handleLogout}>Logout</button>
               ) : (
                 <Link
                   to="/login"
