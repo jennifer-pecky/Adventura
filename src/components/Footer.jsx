@@ -1,6 +1,19 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { AppContext } from '../App';
+import { useContext } from 'react';
 
 export default function Footer() {
+  const Navigate = useNavigate();
+
+  const { isLoggedIn } = useContext(AppContext);
+
+  const handleStories = () => {
+    if (isLoggedIn) {
+      Navigate('/stories');
+    } else {
+      Navigate('/login');
+    }
+  };
   return (
     <footer className="bg-[#8B4513]">
       <div className="max-w-[85rem] py-10 px-4 sm:px-6 lg:px-8 mx-auto">
@@ -27,12 +40,12 @@ export default function Footer() {
               </Link>
             </li>
             <li className="inline-block relative pr-8 last:pr-0 last-of-type:before:hidden before:absolute before:top-1/2 before:right-3 before:-translate-y-1/2 before:content-['/'] before:text-gray-300 dark:before:text-gray-600">
-              <Link
+              <button
                 className="inline-flex gap-x-2 text-sm text-[#fff] hover:text-gray-800  dark:hover:text-gray-200"
-                to="/stories"
+                onClick={handleStories}
               >
                 Stories
-              </Link>
+              </button>
             </li>
           </ul>
 
