@@ -42,7 +42,7 @@ export default function Home() {
           </p>
 
           <Link to={'/signup'}>
-            <button className="flex items-center gap-3 p-4  bg-[#8B4513] hover:bg-[#000000cc] rounded-md shadow-md transition-all ease-in-out duration-600 text-white font-semibold uppercase text-sm">
+            <button className="flex items-center gap-3 p-4 mt-9 bg-[#8B4513] hover:bg-[#000000cc] rounded-md shadow-md transition-all ease-in-out duration-600 text-white font-semibold uppercase text-sm">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"

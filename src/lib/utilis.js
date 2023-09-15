@@ -58,9 +58,6 @@ export const postLogin = async (toast, navigate, setIsLoggedIn, input) => {
 
         if (response.ok) {
             toast.success('🦄 Login Successful!', {
-                onClose: () => {
-                    navigate('/stories');
-                },
                 position: 'top-right',
                 autoClose: 5000,
                 hideProgressBar: false,
@@ -71,6 +68,9 @@ export const postLogin = async (toast, navigate, setIsLoggedIn, input) => {
                 theme: 'dark',
             });
             setIsLoggedIn(true);
+            setTimeout(() => {
+                navigate('/stories');
+            }, 6000);
         } else {
             toast.warn('🦄 Authentication failed. Please check your credentials', {
                 position: 'top-right',
