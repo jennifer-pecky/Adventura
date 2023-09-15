@@ -15,8 +15,12 @@ export const postSignup = async (formData, setSuccessMessage, navigate, setError
         console.log('Response:', response);
 
         if (response.ok) {
+            const data = await response.json();
+            const token = data.token;
+
+            localStorage.setItem('token', token);
+
             setSuccessMessage('Sign-up was successful');
-            localStorage.setItem('token', '');
             // setIsLoggedIn(true);
             navigate('/stories');
         } else {
