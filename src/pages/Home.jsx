@@ -8,7 +8,20 @@ import { AppContext } from '../App';
 // import TextToSpeech from '../components/other/TextToSpeech';
 
 export default function Home() {
+  // const url =
+  //   'https://api-for-adventura-app.onrender.com/api/v1/stories/allstories';
   const { storySelectId, setStorySelectId } = useContext(AppContext);
+  // const [data, setData] = useState([]);
+
+  // const fetchCard = () => {
+  //   return fetch(url)
+  //     .then((res) => res.json())
+  //     .then((d) => setData(d))
+  // }
+
+  // useEffect(() => {
+  //     fetchCard()
+  // }, [])
 
   console.log(storySelectId);
 
@@ -66,7 +79,7 @@ export default function Home() {
         {card.map((item) => (
           <div className="bg-white border rounded-lg shadow-lg" key={item.id}>
             <Link to={`/stories/${item.id}`}>
-              <img src="story.png" alt="" />
+              <img src={item.Image} alt="" />
               <div className="p-8 bg-[#FFF]">
                 <Link to={`/stories/${item.id}`}>
                   <h5 className="mb-2 text-2xl tracking-tight text-[#8B4513] font-bold">
