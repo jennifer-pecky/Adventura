@@ -4,9 +4,7 @@ import { Link } from 'react-router-dom';
 export default function Stories() {
   const [story, setStories] = useState({
     title: '',
-    author: '',
     description: '',
-    content: '',
   });
 
   const handleChange = (e) => {
@@ -34,17 +32,17 @@ export default function Stories() {
               placeholder="Story Title"
               value={story.title}
               onChange={handleChange}
-              className="w-full border border-gray-300 rounded px-3 py-2 bg-[#F5F5F5]"
+              className="w-full  rounded px-3 py-2 bg-[#F5F5F5]"
             />
 
-            <div className="">
+            <div className="mt-10">
               <textarea
                 id="description"
                 name="description"
                 value={story.description}
-                placeholder="Tell your story here...."
+                placeholder="Write your story here...."
                 onChange={handleChange}
-                className="w-full border border-gray-300 rounded px-3 py-36 bg-[#F5F5F5]"
+                className="w-full rounded px-3 py-3 bg-[#F5F5F5] "
               />
             </div>
             <div className="mt-3 flex justify-around">
