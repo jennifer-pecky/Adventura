@@ -24,34 +24,51 @@ export default function Stories() {
       <h2 className="text-3xl font-bold mb-4 text-center text-[#8B4513]">
         Create Your Story
       </h2>
-      <form onSubmit={handleSubmit}>
-        <div className="mb-4">
-          <label htmlFor="title" className="block text-gray-600">
-            Story Title
-          </label>
-          <input
-            type="text"
-            id="title"
-            name="title"
-            value={story.title}
-            onChange={handleChange}
-            className="w-full border border-gray-300 rounded px-3 py-2"
-          />
+      <form onSubmit={handleSubmit} className="">
+        <div className="flex items-center justify-center w-full">
+          <div className="mb-4 md:w-[50%]">
+            <input
+              type="text"
+              id="title"
+              name="title"
+              placeholder="Story Title"
+              value={story.title}
+              onChange={handleChange}
+              className="w-full border border-gray-300 rounded px-3 py-2 bg-[#F5F5F5]"
+            />
+
+            <div className="">
+              <textarea
+                id="description"
+                name="description"
+                value={story.description}
+                placeholder="Tell your story here...."
+                onChange={handleChange}
+                className="w-full border border-gray-300 rounded px-3 py-36 bg-[#F5F5F5]"
+              />
+            </div>
+            <div className="mt-3 flex justify-around">
+              <Link to={'/'}>
+                {' '}
+                <button
+                  type="submit"
+                  className="bg-[#8B4513] text-white px-4 py-2 rounded"
+                >
+                  Back to home
+                </button>
+              </Link>
+
+              <button
+                type="submit"
+                className="bg-[#8B4513] text-white px-4 py-2 rounded"
+              >
+                Save and Publish
+              </button>
+            </div>
+          </div>
         </div>
 
-        <div className="mb-4">
-          <label htmlFor="description" className="block text-gray-600">
-            Description
-          </label>
-          <textarea
-            id="description"
-            name="description"
-            value={story.description}
-            onChange={handleChange}
-            className="w-full border border-gray-300 rounded px-3 py-2"
-          />
-        </div>
-        <div className="mb-4">
+        {/* <div className="mb-4">
           <label htmlFor="content" className="block text-gray-600">
             Story Content
           </label>
@@ -62,25 +79,7 @@ export default function Stories() {
             onChange={handleChange}
             className="w-full border border-gray-300 rounded px-3 py-2"
           />
-        </div>
-        <div className="mb-4 flex justify-between">
-          <Link to={'/'}>
-            {' '}
-            <button
-              type="submit"
-              className="bg-[#8B4513] text-white px-4 py-2 rounded"
-            >
-              Back to home
-            </button>
-          </Link>
-
-          <button
-            type="submit"
-            className="bg-[#8B4513] text-white px-4 py-2 rounded"
-          >
-            Save and Publish
-          </button>
-        </div>
+        </div> */}
       </form>
     </div>
   );

@@ -77,9 +77,12 @@ export default function Home() {
       </div>
       <div className="mt-10 lg:p-16 w-full p-4 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 ">
         {card.map((item) => (
-          <div className="bg-white border rounded-lg shadow-lg" key={item.id}>
+          <div
+            className="bg-white w-full max-w-2xl mx-auto border rounded-lg shadow-lg"
+            key={item.id}
+          >
             <Link to={`/stories/${item.id}`}>
-              <img src={item.Image} alt="" />
+              <img src={item.Image} alt="" className="w-full max-w-2xl" />
               <div className="p-8 bg-[#FFF]">
                 <Link to={`/stories/${item.id}`}>
                   <h5 className="mb-2 text-2xl tracking-tight text-[#8B4513] font-bold">
