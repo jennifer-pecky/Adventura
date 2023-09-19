@@ -66,6 +66,8 @@ export default function Stories() {
           </div>
         </div>
 
+        <Link to={'/userprofile'}>click</Link>
+
         {/* <div className="mb-4">
           <label htmlFor="content" className="block text-gray-600">
             Story Content
