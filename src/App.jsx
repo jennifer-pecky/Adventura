@@ -9,7 +9,6 @@ import Login from './pages/Login';
 import Password from './pages/Password';
 import StoryPage from './components/other/storyPage';
 import { createContext, useState } from 'react';
-import VerifyToken from './components/VerifyToken';
 import UserProfile from './pages/Userprofile';
 // import Layout from './components/Layout/Layout';
 
@@ -40,7 +39,7 @@ function App() {
         </Route>
         <Route path="stories" element={<Stories />} />
         <Route path="stories/:id" element={<StoryPage />} />
-        <Route path="/verify/:id/token" component={<VerifyToken />} />
+
         <Route path="signup" element={<Signup />} />
         <Route path="userprofile" element={<UserProfile />} />
         <Route path="login" element={<Login />} />
