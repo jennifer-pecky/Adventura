@@ -1,5 +1,8 @@
-import { Link } from 'react-router-dom';
+import { Link, Routes, Route } from 'react-router-dom';
 import img from '../images/profile.png';
+import Fire from './fire';
+import About from './About';
+import Lists from './Lists';
 
 function Userprofile() {
   return (
@@ -10,9 +13,9 @@ function Userprofile() {
             <div className="flex flex-col space-y-6 md:pr-40">
               <h1 className="uppercase font-bold text-5xl">Profile</h1>
               <div className="flex space-x-7">
-                <Link to="/home">Home</Link>
-                <Link to="/lists">Lists</Link>
-                <Link to="/about">About</Link>
+                <Link to="/userprofile/home">Home</Link>
+                <Link to="/userprofile/lists">Lists</Link>
+                <Link to="/userprofile/about">About</Link>
               </div>
             </div>
 
@@ -23,6 +26,11 @@ function Userprofile() {
           </div>
         </div>
       </div>
+      <Routes>
+        <Route path="home" element={<Fire />} />
+        <Route path="lists" element={<Lists />} />
+        <Route path="about" element={<About />} />
+      </Routes>
     </section>
   );
 }

@@ -41,7 +41,8 @@ function App() {
         <Route path="stories/:id" element={<StoryPage />} />
 
         <Route path="signup" element={<Signup />} />
-        <Route path="userprofile" element={<UserProfile />} />
+        {/* <Route path="userprofile" element={<UserProfile />} /> */}
+        <Route path="userprofile/*" element={<UserProfile />} />
         <Route path="login" element={<Login />} />
         <Route path="password" element={<Password />} />
         <Route path="*" element={<Nopage />} />
