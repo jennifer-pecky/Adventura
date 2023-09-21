@@ -1,10 +1,5 @@
-# netlify.toml
-
-[build]
-command = "npm run build"  # Replace with your build command
-publish = "build"          # Replace with your build directory
 
 [[redirects]]
-from = "/*"
-to = "/index.html"
+from = “/*”
+to = “/index.html”
 status = 200
