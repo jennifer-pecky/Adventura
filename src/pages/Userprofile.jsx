@@ -30,7 +30,7 @@ function Userprofile() {
           <div className="flex flex-col items-center w-full p-4 md:p-0 space-y-8">
             <img src={img} alt="" className="w-24 h-24 rounded-full" />
             <h1 className="text-center font-bold text-4xl text-[#8B4513]">
-              Jennifer Chioma
+              Jennifer Chiomaj
             </h1>
           </div>
         </div>
