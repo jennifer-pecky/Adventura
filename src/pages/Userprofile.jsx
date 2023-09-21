@@ -6,31 +6,34 @@ import Lists from './Lists';
 
 function Userprofile() {
   return (
-    <section>
-      <div className="flex flex-col justify-center items-center h-[50vh] w-full">
-        <div className="flex flex-col justify-center items-center h-[50vh] w-full">
-          <div className="flex flex-col space-y-4 md:flex-row md:space-x-12 md:space-y-0">
-            <div className="flex flex-col space-y-6 md:pr-40">
-              <h1 className="uppercase font-bold text-5xl">Profile</h1>
-              <div className="flex space-x-7">
-                <Link to="/userprofile/home">Home</Link>
-                <Link to="/userprofile/lists">Lists</Link>
-                <Link to="/userprofile/about">About</Link>
-              </div>
+    <section className="flex flex-col min-h-screen">
+      <div className="flex-1 flex-col-reverse md:flex-row border border-gray-300">
+        <div className="md:w-[50%] border-r border-gray-300">
+          <div className="flex flex-col space-y-6 w-full md:p-[50px]">
+            <h1 className="uppercase font-bold text-5xl text-[#8B4513]">
+              Profile
+            </h1>
+            <div className="flex space-x-7">
+              <Link to="/userprofile/home">Home</Link>
+              <Link to="/userprofile/lists">Lists</Link>
+              <Link to="/userprofile/about">About</Link>
             </div>
-
-            <div className="flex flex-col items-center">
-              <img src={img} alt="" className="w-24 h-24 rounded-full" />
-              <h1 className="text-center font-medium ">Jennifer Chioma</h1>
-            </div>
+            <Routes>
+              <Route path="home" element={<Fire />} />
+              <Route path="lists" element={<Lists />} />
+              <Route path="about" element={<About />} />
+            </Routes>
+          </div>
+        </div>
+        <div className="md:w-[50%] md:pt-24">
+          <div className="flex flex-col items-center w-full p-4 md:p-0 space-y-8">
+            <img src={img} alt="" className="w-24 h-24 rounded-full" />
+            <h1 className="text-center font-bold text-4xl text-[#8B4513]">
+              Jennifer Chioma
+            </h1>
           </div>
         </div>
       </div>
-      <Routes>
-        <Route path="home" element={<Fire />} />
-        <Route path="lists" element={<Lists />} />
-        <Route path="about" element={<About />} />
-      </Routes>
     </section>
   );
 }

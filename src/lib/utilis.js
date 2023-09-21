@@ -7,6 +7,7 @@ export const postSignup = async (formData, setSuccessMessage, navigate, setError
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
+
                 },
                 body: JSON.stringify(formData),
             }
@@ -42,6 +43,20 @@ export const postLogin = async (toast, navigate, setIsLoggedIn, input, setInput)
     try {
         const token = localStorage.getItem('token');
 
+        // loading state
+        toast.info('🦄 Logging in...', {
+            position: 'top-center',
+            autoClose: false,
+            hideProgressBar: false,
+            closeOnClick: false,
+            pauseOnHover: false,
+            draggable: true,
+            progress: undefined,
+            theme: 'dark',
+        })
+
+        // setIsLoading(true);
+
         const response = await fetch(
             'https://api-for-adventura-app.onrender.com/api/v1/auth/signin',
             {
@@ -56,7 +71,33 @@ export const postLogin = async (toast, navigate, setIsLoggedIn, input, setInput)
 
         console.log('Response:', response);
 
-        if (response.ok) {
+        toast.dismiss();
+
+        // Remove loading state
+        // setIsLoading(false);
+
+
+        if (!response.ok) {
+            console.error('Error:', response);
+            // Handle error here, for example:
+            toast.error('🦄 Login Failed! Please try again.', {
+                position: 'top-right',
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: 'dark',
+            });
+            // You can reset the input fields if needed
+            setInput({
+                email: '',
+                password: '',
+            });
+            return;
+        } else {
+            // If login is successful
             toast.success('🦄 Login Successful!', {
                 position: 'top-right',
                 autoClose: 5000,
@@ -67,29 +108,23 @@ export const postLogin = async (toast, navigate, setIsLoggedIn, input, setInput)
                 progress: undefined,
                 theme: 'dark',
             });
+
             setIsLoggedIn(true);
-            setTimeout(() => {
-                setInput({
-                    email: '',
-                    password: '',
-                });
-                navigate('/stories');
-            }, 6000);
-        } else {
-            toast.warn('🦄 Authentication failed. Please check your credentials', {
-                position: 'top-right',
-                autoClose: 5000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined,
-                theme: 'dark',
-            });
         }
+        // Redirect to the desired page after successful login
+        setTimeout(() => {
+            setInput({
+                email: '',
+                password: '',
+            });
+            navigate('/stories');
+        }, 2000); // Adjust the delay as needed
+
     } catch (error) {
         console.error('Error:', error);
-        toast.warn('🦄 An error occured during authentication', {
+
+        // Handle error here, for example:
+        toast.warm('🦄 An error occurred during login. Please try again later.', {
             position: 'top-right',
             autoClose: 5000,
             hideProgressBar: false,
@@ -100,7 +135,8 @@ export const postLogin = async (toast, navigate, setIsLoggedIn, input, setInput)
             theme: 'dark',
         });
     }
-}
+};
+
 
 
 // import { Link } from 'react-router-dom';
