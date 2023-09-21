@@ -1,7 +1,9 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import img from '../images/profile.png';
 
 export default function Stories() {
+  const Navigate = useNavigate();
   const [story, setStories] = useState({
     title: '',
     description: '',
@@ -17,12 +19,21 @@ export default function Stories() {
     console.log('Story Data:', story);
   };
 
+  const handleUserProfile = () => {
+    Navigate('/userprofile');
+  };
+
   return (
     <div className="p-4">
-      <h2 className="text-3xl font-bold mb-4 text-center text-[#8B4513]">
-        Create Your Story
-      </h2>
-      <form onSubmit={handleSubmit} className="">
+      <div className="flex items-center justify-center space-x-10">
+        <h2 className=" md:text-3xl text-lg font-bold mb-4 text-center text-[#8B4513]">
+          Create Your Story
+        </h2>
+        <div onClick={handleUserProfile} className="cursor-pointer">
+          <img src={img} alt="" className="w-12 h-12 rounded-full" />
+        </div>
+      </div>
+      <form onSubmit={handleSubmit} className="cursor-pointer">
         <div className="flex items-center justify-center w-full">
           <div className="mb-4 md:w-[50%]">
             <input
@@ -65,8 +76,6 @@ export default function Stories() {
             </div>
           </div>
         </div>
-
-        <Link to={'/userprofile'}>click</Link>
 
         {/* <div className="mb-4">
           <label htmlFor="content" className="block text-gray-600">

@@ -6,19 +6,20 @@ import Lists from './Lists';
 
 function Userprofile() {
   return (
-    <section className="flex flex-col min-h-screen">
-      <div className="flex-1 flex-col-reverse md:flex-row border border-gray-300">
+    <section className="flex flex-col ">
+      <div className="flex flex-col-reverse md:flex-row border border-gray-300 md:p-16">
         <div className="md:w-[50%] border-r border-gray-300">
           <div className="flex flex-col space-y-6 w-full md:p-[50px]">
-            <h1 className="uppercase font-bold text-5xl text-[#8B4513]">
+            <h1 className="uppercase font-bold text-5xl text-[#8B4513] text-center">
               Profile
             </h1>
-            <div className="flex space-x-7">
+            <div className="flex space-x-7 text-[15px]">
               <Link to="/userprofile/home">Home</Link>
               <Link to="/userprofile/lists">Lists</Link>
               <Link to="/userprofile/about">About</Link>
             </div>
             <Routes>
+              <Route path="/" element={<Fire />} />
               <Route path="home" element={<Fire />} />
               <Route path="lists" element={<Lists />} />
               <Route path="about" element={<About />} />
