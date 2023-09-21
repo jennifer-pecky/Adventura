@@ -1,11 +1,15 @@
 // import { NavLink } from 'react-router-dom';
 import { Link, useNavigate } from 'react-router-dom';
 import '../styles/Head.css';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { postSignup } from '../lib/utilis';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { AppContext } from '../App';
 // import { AppContext } from '../App';
 
 export default function Signup() {
+  const {setIsLoggedIn} = useContext(AppContext);
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
     firstname: '',
@@ -28,7 +32,7 @@ export default function Signup() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    postSignup(formData, setSuccessMessage, navigate, setErrorMessage);
+    postSignup(toast, formData, setIsLoggedIn, setSuccessMessage, navigate, setErrorMessage);
   };
   return (
     <>
@@ -160,6 +164,7 @@ export default function Signup() {
             <div className="error-message text-red-600">{errorMessage}</div>
           )}
         </div>
+        <ToastContainer />
       </div>
     </>
   );

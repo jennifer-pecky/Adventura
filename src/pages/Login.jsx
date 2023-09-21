@@ -8,7 +8,7 @@ import { postLogin } from '../lib/utilis';
 export default function Login() {
   const { setIsLoggedIn } = useContext(AppContext);
   const navigate = useNavigate();
-  const [isLoading, setIsLoading] = useState(false);
+  // const [isLoading, setIsLoading] = useState(false);
 
   const [input, setInput] = useState({
     email: '',
@@ -22,9 +22,8 @@ export default function Login() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setIsLoading(true);
-    postLogin(toast, navigate, setIsLoggedIn, input, setInput, setIsLoading);
-    setIsLoading(false);
+
+    postLogin(toast, navigate, setIsLoggedIn, input, setInput);
   };
 
   return (
@@ -88,11 +87,11 @@ export default function Login() {
           </div>
         </form>
 
-        {isLoading && (
+        {/* {isLoading && (
           <div className="flex justify-center mt-4">
             <div className="animate-spin rounded-full border-t-4 border-blue-500 border-solid h-12 w-12"></div>
           </div>
-        )}
+        )} */}
         <ToastContainer />
       </div>
     </div>

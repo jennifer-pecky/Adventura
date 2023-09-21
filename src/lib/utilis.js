@@ -1,6 +1,18 @@
-export const postSignup = async (formData, setSuccessMessage, navigate, setErrorMessage) => {
+export const postSignup = async (toast, formData, setIsLoggedIn, setSuccessMessage, navigate, setErrorMessage) => {
 
     try {
+
+        // loading state
+        toast.info('🦄 Creating account...', {
+            position: 'top-center',
+            autoClose: false,
+            hideProgressBar: false,
+            closeOnClick: false,
+            pauseOnHover: false,
+            draggable: true,
+            progress: undefined,
+            theme: 'dark',
+        })
         const response = await fetch(
             'https://api-for-adventura-app.onrender.com/api/v1/auth/signup',
             {
@@ -15,6 +27,8 @@ export const postSignup = async (formData, setSuccessMessage, navigate, setError
 
         console.log('Response:', response);
 
+        toast.dismiss();
+
         if (response.ok) {
             const data = await response.json();
             const token = data.token;
@@ -22,7 +36,20 @@ export const postSignup = async (formData, setSuccessMessage, navigate, setError
             localStorage.setItem('token', token);
 
             setSuccessMessage('Sign-up was successful');
-            // setIsLoggedIn(true);
+            //Success toast message 
+
+            toast.success('🦄 Sign-up Successful!', {
+                position: 'top-right',
+                autoClose: 4000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: 'dark',
+            });
+
+            setIsLoggedIn(true);
             navigate('/stories');
         } else {
             if (response.status === 422) {
@@ -32,6 +59,17 @@ export const postSignup = async (formData, setSuccessMessage, navigate, setError
                 setErrorMessage('An error occurred during sign-up');
                 // setErrorMessage(errorText.message);
             }
+            toast.error('🦄 An error occurred during sign-up!', {
+                position: 'top-right',
+                autoClose: 4000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: 'dark',
+            });
+
         }
     } catch (error) {
         console.error('Error:', error);
@@ -90,7 +128,7 @@ export const postLogin = async (toast, navigate, setIsLoggedIn, input, setInput)
                 progress: undefined,
                 theme: 'dark',
             });
-            // You can reset the input fields if needed
+
             setInput({
                 email: '',
                 password: '',
