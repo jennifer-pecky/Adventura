@@ -1,3 +1,5 @@
+import api from "../services/api";
+
 export const postSignup = async (toast, formData, setIsLoggedIn, setSuccessMessage, navigate, setErrorMessage) => {
 
     try {
@@ -13,17 +15,9 @@ export const postSignup = async (toast, formData, setIsLoggedIn, setSuccessMessa
             progress: undefined,
             theme: 'dark',
         })
-        const response = await fetch(
-            'https://api-for-adventura-app.onrender.com/api/v1/auth/signup',
-            {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-
-                },
-                body: JSON.stringify(formData),
-            }
-        );
+        const response = await api.post("auth/signup",
+            formData
+        )
 
         console.log('Response:', response);
 
@@ -120,7 +114,7 @@ export const postLogin = async (toast, navigate, setIsLoggedIn, input, setInput)
             // Handle error here, for example:
             toast.error('🦄 Login Failed! Please try again.', {
                 position: 'top-right',
-                autoClose: 5000,
+                autoClose: 3000,
                 hideProgressBar: false,
                 closeOnClick: true,
                 pauseOnHover: true,
@@ -138,7 +132,7 @@ export const postLogin = async (toast, navigate, setIsLoggedIn, input, setInput)
             // If login is successful
             toast.success('🦄 Login Successful!', {
                 position: 'top-right',
-                autoClose: 5000,
+                autoClose: 3000,
                 hideProgressBar: false,
                 closeOnClick: true,
                 pauseOnHover: true,

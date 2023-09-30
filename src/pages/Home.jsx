@@ -5,23 +5,30 @@ import StoryPage from '../components/other/storyPage';
 import card from '../story';
 import { useContext } from 'react';
 import { AppContext } from '../App';
+import { useEffect } from 'react';
+// import PropTypes from 'prop-types';
 // import TextToSpeech from '../components/other/TextToSpeech';
 
 export default function Home() {
-  // const url =
-  //   'https://api-for-adventura-app.onrender.com/api/v1/stories/allstories';
+  const url =
+    'https://api-for-adventura-app.onrender.com/api/v1/stories/allstories';
   const { storySelectId, setStorySelectId } = useContext(AppContext);
   // const [data, setData] = useState([]);
 
-  // const fetchCard = () => {
-  //   return fetch(url)
-  //     .then((res) => res.json())
-  //     .then((d) => setData(d))
-  // }
+  const fetchCard = () => {
+    return fetch(url).then((res) => {
+      console.log(res);
+    });
+    // .then((d) => setData(d))
+  };
 
-  // useEffect(() => {
-  //     fetchCard()
-  // }, [])
+  useEffect(() => {
+    fetchCard();
+  }, []);
+
+  // Home.propTypes = {
+  //   publishedStories: PropTypes.array.isRequired, // Add this prop validation
+  // };
 
   console.log(storySelectId);
 
@@ -124,6 +131,16 @@ export default function Home() {
             content={card.find((story) => story.id === storySelectId).content}
           />
         )}
+
+        {/* <div className="mt-10 lg:p-16 w-full p-4 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+          {publishedStories.map((story, index) => (
+            <div key={index}>
+              <h2>{story.title}</h2>
+              <p>{story.description}</p>
+              
+            </div>
+          ))}
+        </div> */}
       </div>
 
       <HomeUi />
